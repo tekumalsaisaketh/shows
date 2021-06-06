@@ -1,7 +1,7 @@
 
 async function getData(show)
 {   
-    const response = await fetch(`http://api.tvmaze.com/search/shows?q=${show}`)
+    const response = await fetch(`https://api.tvmaze.com/search/shows?q=${show}`)
     const string=await response.text();
     const data=await JSON.parse(string);
     console.log(data);
