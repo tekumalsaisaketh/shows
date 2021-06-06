@@ -1,7 +1,7 @@
 
 async function getData(show)
 {   
-    const response = await fetch(`https://api.tvmaze.com/search/shows?q=${show}`)
+    const response = await fetch(`http://api.tvmaze.com/search/shows?q=${show}`)
     const string=await response.text();
     const data=await JSON.parse(string);
     console.log(data);
@@ -10,7 +10,7 @@ async function getData(show)
       let tag1 = document.createElement("div");
       tag1.setAttribute("class", "item");
       let img = document.createElement("img");
-      img.setAttribute("id","img1")
+      img.setAttribute("class","img1")
       let desc=document.createElement("p");
       let name=document.createElement("h3");
       let link=document.createElement("a");
