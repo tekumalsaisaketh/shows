@@ -188,8 +188,8 @@ body {
   height:50px;
   font-size: 20px;
   font-weight: 700;
-  border-radius: 5px;
-  background-color: rgb(196, 192, 192);
+  background-color: white;
+  border:3px solid white
 }
 #img1
 {
@@ -206,18 +206,19 @@ body {
 }
 .item
 {
-  background-color: #76528BFF;
+  background-color: white;
   margin-left: 10px;
   justify-content: center;
   width: auto;
   height: 500px;
   overflow:auto;
-  border-bottom: 10px solid #76528BFF;
-  border-top: 10px solid #76528BFF;
+  border-bottom: 10px solid white;
+  border-top: 10px solid white;
   padding-bottom: 0px;
   padding-top: 0px;
   padding-right: 0px;
-  border-right: 10px solid #76528BFF;
+  border-right: 10px solid white;
+  border-radius: 10px;
 
 }
 
