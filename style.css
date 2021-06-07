@@ -220,7 +220,10 @@ body {
   border-right: 10px solid #76528BFF;
 
 }
-
+#name
+{
+  font-weight:bold;
+}
 
 
 
