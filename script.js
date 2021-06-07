@@ -12,7 +12,7 @@ async function getData(show)
       let img = document.createElement("img");
       img.setAttribute("class","img1")
       let desc=document.createElement("p");
-      let name=document.createElement("h3");
+      let name=document.createElement("h2");
       let link=document.createElement("a");
       name.setAttribute("id","name");
       desc.setAttribute("id","desc");

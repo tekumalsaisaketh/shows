@@ -221,7 +221,10 @@ body {
   border-radius: 10px;
 
 }
-
+#name
+{
+  font-weight:bold;
+}
 
 
 
