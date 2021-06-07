@@ -1,7 +1,7 @@
 
 async function getData(show)
 {   
-    const response = await fetch(`http://api.tvmaze.com/search/shows?q=${show}`)
+    const response = await fetch(`https://api.tvmaze.com/search/shows?q=${show}`)
     const string=await response.text();
     const data=await JSON.parse(string);
     console.log(data);
@@ -28,11 +28,21 @@ async function getData(show)
       tag2.appendChild(link);
       tag1.appendChild(tag2);
 
-      if (data[i].show.image && data[i].show.image.medium)
+      if (data[i].show.image && data[i].show.image.medium && data[i].show.summary)
       {
         img.src = data[i].show.image.medium;
         name.innerHTML=data[i].show.name;
-        desc.innerHTML = data[i].show.summary
+        let sum = data[i].show.summary.split('.');
+        let para="";
+        for(let i=0;i<sum.length;i++)
+        {
+            para+=sum[i];
+            if(para.length>=200)
+            {
+                break;
+            }
+        }
+        desc.innerHTML = para;
         link.innerHTML="Watch Here";
         link.href = data[i].show.officialSite
         document.getElementById("hello").appendChild(tag1);

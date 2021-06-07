@@ -134,8 +134,9 @@ body {
   #head2 {
     display: none;
   }
-  
 }
+  
+  
 
 @media only screen and (min-width: 321px) and (max-width: 768px) {
   #hello {
@@ -168,9 +169,10 @@ body {
 {
   background-color:#FCF6F5FF;
   text-align: center;
-  width: auto;
+
   padding: 5px;
   margin-top: 5px;
+  width: 210px;
 }
 
 #link
@@ -193,6 +195,9 @@ body {
 {
   margin-bottom: 5px;
   margin: 0px;
+  text-align: center;
+  flex: auto;
+  justify-content: center;
 }
 #hello
 {
@@ -203,6 +208,20 @@ body {
 {
   background-color: #76528BFF;
   margin-left: 10px;
+  justify-content: center;
+  width: auto;
+  height: 500px;
+  overflow:auto;
+  border-bottom: 10px solid #76528BFF;
+  border-top: 10px solid #76528BFF;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  border-right: 10px solid #76528BFF;
+
 }
+
+
+
 
 
