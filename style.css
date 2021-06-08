@@ -1,4 +1,6 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   margin: 5px;
@@ -182,15 +184,7 @@ body {
   font-weight: bolder;
   font-size: 14px;
 }
-#names
-{
-  width: 300px;
-  height:50px;
-  font-size: 20px;
-  font-weight: 700;
-  background-color: white;
-  border:3px solid white
-}
+
 #img1
 {
   margin-bottom: 5px;
