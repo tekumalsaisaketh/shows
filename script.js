@@ -26,6 +26,7 @@ async function getData(show)
         let name=document.createElement("h2");
         let link=document.createElement("a");
         name.setAttribute("id","name");
+          name.setAttribute("class","select-text");
         desc.setAttribute("id","desc");
         let tag2=document.createElement("div");
         tag2.setAttribute("id","tag2");
