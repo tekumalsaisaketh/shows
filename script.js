@@ -5,47 +5,59 @@ async function getData(show)
     const string=await response.text();
     const data=await JSON.parse(string);
     console.log(data);
-    for(let i=0; i<data.length;i++)
+    if (data.length === 0)
     {
       let tag1 = document.createElement("div");
-      tag1.setAttribute("class", "item");
-      let img = document.createElement("img");
-      img.setAttribute("class","img1")
-      let desc=document.createElement("p");
-      let name=document.createElement("h2");
-      let link=document.createElement("a");
-      name.setAttribute("id","name");
-      desc.setAttribute("id","desc");
-      let tag2=document.createElement("div");
-      tag2.setAttribute("id","tag2");
-      tag2.setAttribute("class","container-fluid")
-
+      tag1.innerHTML = `No results found for &nbsp <span id="white">  '${show}'</span>`
+      tag1.setAttribute("class","text-4xl flex items-center justify-center font-semibold text-red-400");
       
-      link.setAttribute("id","link")
-      tag1.appendChild(img);
-      tag2.appendChild(name);
-      tag2.appendChild(desc);
-      tag2.appendChild(link);
-      tag1.appendChild(tag2);
-
-      if (data[i].show.image && data[i].show.image.medium && data[i].show.summary)
+      document.getElementById("hello").appendChild(tag1);
+      
+    }
+    else
+    {
+      for(let i=0; i<data.length;i++)
       {
-        img.src = data[i].show.image.medium;
-        name.innerHTML=data[i].show.name;
-        let sum = data[i].show.summary.split('.');
-        let para="";
-        for(let i=0;i<sum.length;i++)
+        let tag1 = document.createElement("div");
+        tag1.setAttribute("class", "item");
+        let img = document.createElement("img");
+        img.setAttribute("class","img1")
+        let desc=document.createElement("p");
+        let name=document.createElement("h2");
+        let link=document.createElement("a");
+        name.setAttribute("id","name");
+        desc.setAttribute("id","desc");
+        let tag2=document.createElement("div");
+        tag2.setAttribute("id","tag2");
+        tag2.setAttribute("class","container-fluid")
+
+        
+        link.setAttribute("id","link")
+        tag1.appendChild(img);
+        tag2.appendChild(name);
+        tag2.appendChild(desc);
+        tag2.appendChild(link);
+        tag1.appendChild(tag2);
+
+        if (data[i].show.image && data[i].show.image.medium && data[i].show.summary)
         {
-            para+=sum[i];
-            if(para.length>=200)
-            {
-                break;
-            }
+          img.src = data[i].show.image.medium;
+          name.innerHTML=data[i].show.name;
+          let sum = data[i].show.summary.split('.');
+          let para="";
+          for(let i=0;i<sum.length;i++)
+          {
+              para+=sum[i];
+              if(para.length>=200)
+              {
+                  break;
+              }
+          }
+          desc.innerHTML = para;
+          link.innerHTML="Watch Here";
+          link.href = data[i].show.officialSite
+          document.getElementById("hello").appendChild(tag1);
         }
-        desc.innerHTML = para;
-        link.innerHTML="Watch Here";
-        link.href = data[i].show.officialSite
-        document.getElementById("hello").appendChild(tag1);
       }
     }
 }
